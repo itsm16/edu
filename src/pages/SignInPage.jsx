@@ -1,7 +1,10 @@
 import React from 'react'
 import Input from '../components/Input'
+import { useNavigate } from 'react-router'
 
 function SignInPage() {
+  const navigate = useNavigate();
+
   return (
     <div className="bg-[#F7F8F9] flex flex-col h-screen items-center">
         <div className='flex flex-col md:items-center mb-[100px] min-w-fit mt-[50px] md:mt-[100px] md:w-[30%] md:max-w-[350px] w-[93%] gap-7'>
@@ -16,7 +19,7 @@ function SignInPage() {
         <div className='flex flex-col gap-5 w-full'>
             <Input placeholder='Email'/>
             <Input title='password' placeholder='Password'/>
-            <button className='btn bg-[#CBCBCB] text-white text-sm h-10 w-full rounded-md'>Login</button>
+            <button onClick={()=>navigate("/account")} className='btn bg-[#CBCBCB] text-white text-sm h-10 w-full rounded-md'>Login</button>
         </div>
     </div>
     </div>
