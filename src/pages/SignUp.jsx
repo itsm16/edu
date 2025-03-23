@@ -1,7 +1,10 @@
 import React from 'react'
 import Input from '../components/Input'
+import { useNavigate } from 'react-router';
 
 function SignUp() {
+    const navigate = useNavigate();
+
     return (
         <div className='h-screen flex flex-col items-center'>
             <div className='h-full flex flex-col justify-between my-10 md:w-[30%] md:max-w-[350px] w-[90%]'>
@@ -10,7 +13,7 @@ function SignUp() {
                         <div>Create your</div>
                         <div>PopX account</div>
                     </div>
-                    <Input title='Full Name' placeholder='Full Name' />
+                    <Input title='Full Name' placeholder='Full Name'/>
                     <Input title='Phone Number' placeholder='Phone Number' />
                     <Input title='Email address' placeholder='Email address' />
                     <Input title='Password' placeholder='Password' />
@@ -31,7 +34,7 @@ function SignUp() {
                         </div>
                     </div>
                 </div>
-                <button
+                <button onClick={()=>navigate("/account")}
                     className='bg-[#6C25FF] text-sm h-10 w-full text-white rounded-md'>Create Account</button>
 
             </div>
